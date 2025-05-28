@@ -1,0 +1,139 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "DNS Server gratis tanpa logs untuk memblokir judi online, iklan, tracker, dan telemetri. Privasi terjamin 100% dengan no-logs policy. Melindungi keluarga dengan internet yang lebih aman dan bersih.",
+  keywords = "DNS server, no logs, tanpa logs, blok judi online, blok judol, blokir judol, blokir judi online, anti iklan, anti tracker, DNS gratis, internet aman, parental control, DNS Indonesia, privasi, zero logs, private DNS",
+  image = "/og-image.png",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="AKBXR DNS" />
+    <meta name="language" content="id" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={Astro.url} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="AKBXR DNS" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.url)} />
+    <meta name="twitter:site" content="@dnsguard" />
+    <meta name="twitter:creator" content="@dnsguard" />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AKBXR DNS",
+        "description": "DNS Server gratis untuk memblokir judi online, iklan, tracker, dan telemetri",
+        "url": "https://dns.akbxr.com",
+        "logo": "https://dns.akbxr.com/favicon.svg",
+        "sameAs": [
+          "https://twitter.com/dnsguard",
+          "https://github.com/dnsguard"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Technical Support",
+          "availableLanguage": "Indonesian"
+        },
+        "offers": {
+          "@type": "Offer",
+          "description": "Free DNS service for blocking gambling, ads, trackers, and telemetry with no-logs policy",
+          "price": "0",
+          "priceCurrency": "IDR"
+        },
+        "privacyPolicy": "https://dns.akbxr.com/privacy",
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Privacy Policy",
+            "value": "No Logs - Zero Data Collection"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "DNS Security",
+            "value": "Blocks gambling, ads, trackers, telemetry"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AKBXR DNS",
+        "url": "https://dns.akbxr.com",
+        "description": "DNS Server gratis tanpa logs untuk memblokir judi online, iklan, tracker, dan telemetri dengan jaminan privasi 100%",
+        "inLanguage": "id-ID",
+        "isAccessibleForFree": true,
+        "creator": {
+          "@type": "Organization",
+          "name": "Akbar Khairul Aziz"
+        },
+        "mainEntity": {
+          "@type": "Service",
+          "name": "AKBXR DNS No-Logs DNS Service",
+          "description": "Private DNS service with zero logging policy",
+          "serviceType": "DNS Resolution Service",
+          "termsOfService": "https://dns.akbxr.com/terms"
+        }
+      }
+    </script>
+  </head>
+  <body class="font-sans antialiased">
+    <slot />
+
+    <style>
+      html {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+    </style>
+
+    <style is:global>
+      @import "../styles/global.css";
+    </style>
+  </body>
+</html>

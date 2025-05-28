@@ -1,0 +1,50 @@
+{
+  "name": "dns.akbxr.com",
+  "version": "1.0.0",
+  "description": "Landing page untuk DNS server yang memblokir judi online, iklan, tracker, dan telemetri",
+  "type": "module",
+  "keywords": [
+    "dns",
+    "dns-server",
+    "ad-blocker",
+    "gambling-blocker",
+    "tracker-blocker",
+    "parental-control",
+    "internet-safety",
+    "astro",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "akbxr",
+  "license": "MIT",
+  "homepage": "https://dns.akbxr.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akbxr/web-dns.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akbxr/web-dns/issues"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/vite": "^4.1.7",
+    "astro": "^5.8.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

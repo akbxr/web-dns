@@ -1,0 +1,658 @@
+---
+
+---
+
+<section id="setup" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        Panduan Setup DNS
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Ikuti langkah-langkah sederhana di bawah ini untuk mengatur Akbxr
+        DNSpada perangkat Anda.
+      </p>
+    </div>
+
+    <!-- Platform tabs -->
+    <div class="mb-12">
+      <div class="flex flex-wrap justify-center gap-2 mb-8">
+        <button
+          class="platform-tab active bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+          data-platform="windows"
+        >
+          <!-- Windows Logo Icon - Official Microsoft Windows logo -->
+          <svg
+            class="w-5 h-5 mr-2 inline"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.351"
+            ></path>
+          </svg>
+          Windows
+        </button>
+        <button
+          class="platform-tab bg-gray-200 text-gray-700 hover:bg-gray-300 px-6 py-3 rounded-lg font-medium transition-colors"
+          data-platform="macos"
+        >
+          <!-- Apple Logo Icon - Official Apple logo for macOS -->
+          <svg
+            class="w-5 h-5 mr-2 inline"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+            ></path>
+          </svg>
+          macOS
+        </button>
+        <button
+          class="platform-tab bg-gray-200 text-gray-700 hover:bg-gray-300 px-6 py-3 rounded-lg font-medium transition-colors"
+          data-platform="android"
+        >
+          <!-- Android Robot Icon - Official Android mascot -->
+          <svg
+            class="w-5 h-5 mr-2 inline"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4486.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4486.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1518-.5972.416.416 0 00-.5972.1518l-2.0223 3.5046C15.5027 8.2231 13.8388 7.7835 12.0003 7.7835c-1.8385 0-3.5024.4396-5.1109 1.0989L4.8671 5.2778a.416.416 0 00-.5972-.1518.416.416 0 00-.1518.5972L6.1154 9.3214C2.9519 11.2041.9951 14.0906.9951 17.32h22.0098c0-3.2294-1.9568-6.1159-5.1203-8.0008"
+            ></path>
+          </svg>
+          Android
+        </button>
+        <button
+          class="platform-tab bg-gray-200 text-gray-700 hover:bg-gray-300 px-6 py-3 rounded-lg font-medium transition-colors"
+          data-platform="ios"
+        >
+          <!-- Apple Logo Icon - Same as macOS, represents iOS devices -->
+          <svg
+            class="w-5 h-5 mr-2 inline"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+            ></path>
+          </svg>
+          iOS
+        </button>
+        <button
+          class="platform-tab bg-gray-200 text-gray-700 hover:bg-gray-300 px-6 py-3 rounded-lg font-medium transition-colors"
+          data-platform="router"
+        >
+          <!-- Router Icon - Device with antennas and base unit -->
+          <svg
+            class="w-5 h-5 mr-2 inline"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 15h16v4H4v-4zm2 2h2v1H6v-1zm4 0h2v1h-2v-1z"></path>
+            <path d="M7 5h2v6H7V5zm4 0h2v6h-2V5zm4 0h2v6h-2V5z"></path>
+            <rect x="3" y="12" width="18" height="2" rx="1"></rect>
+          </svg>
+          Router
+        </button>
+      </div>
+
+      <!-- Platform content -->
+      <div class="platform-content">
+        <!-- Windows -->
+        <div id="windows-content" class="platform-panel active">
+          <div class="card p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Setup DNS di Windows
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Buka Network Settings
+                  </h4>
+                  <p class="text-gray-600">
+                    Klik kanan pada ikon Wi-Fi di system tray, pilih "Open
+                    Network & Internet settings"
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Pilih Network Adapter
+                  </h4>
+                  <p class="text-gray-600">
+                    Klik "Change adapter options" lalu pilih koneksi yang aktif
+                    (Wi-Fi atau Ethernet)
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Properties > TCP/IPv4
+                  </h4>
+                  <p class="text-gray-600">
+                    Klik kanan pada adapter → Properties → pilih "Internet
+                    Protocol Version 4 (TCP/IPv4)" → Properties
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Masukkan DNS Address
+                  </h4>
+                  <p class="text-gray-600 mb-3">
+                    Pilih "Use the following DNS server addresses" dan masukkan:
+                  </p>
+                  <div class="bg-gray-50 p-4 rounded-lg space-y-2">
+                    <div><strong>Preferred DNS server:</strong> 168.110.220.247</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  ✓
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">Selesai</h4>
+                  <p class="text-gray-600">
+                    Klik OK untuk menyimpan pengaturan. AKBXR DNS sekarang
+                    aktif!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- macOS -->
+        <div id="macos-content" class="platform-panel hidden">
+          <div class="card p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Setup DNS di macOS
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Buka System Preferences
+                  </h4>
+                  <p class="text-gray-600">
+                    Klik Apple menu → System Preferences → Network
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Pilih Network Interface
+                  </h4>
+                  <p class="text-gray-600">
+                    Pilih Wi-Fi atau Ethernet yang sedang aktif dari daftar di
+                    sebelah kiri
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Advanced Settings
+                  </h4>
+                  <p class="text-gray-600">
+                    Klik tombol "Advanced..." di pojok kanan bawah
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">Tab DNS</h4>
+                  <p class="text-gray-600 mb-3">
+                    Klik tab "DNS" dan tambahkan DNS servers berikut:
+                  </p>
+                  <div class="bg-gray-50 p-4 rounded-lg space-y-2">
+                    <div>168.110.220.247</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  ✓
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Apply Changes
+                  </h4>
+                  <p class="text-gray-600">
+                    Klik "OK" lalu "Apply" untuk menyimpan pengaturan
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android -->
+        <div id="android-content" class="platform-panel hidden">
+          <div class="card p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Setup DNS di Android
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Buka Settings
+                  </h4>
+                  <p class="text-gray-600">
+                    Buka aplikasi Settings di Android Anda
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Network & Internet
+                  </h4>
+                  <p class="text-gray-600">
+                    Pilih "Network & internet" atau "Connections" (tergantung
+                    versi Android)
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Advanced Settings
+                  </h4>
+                  <p class="text-gray-600">
+                    Pilih "Advanced" → "Private DNS" atau cari opsi "DNS"
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Configure Private DNS
+                  </h4>
+                  <p class="text-gray-600 mb-3">
+                    Pilih "Private DNS provider hostname" dan masukkan:
+                  </p>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <div><strong>Hostname:</strong> dns.akbxr.com</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  ✓
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">Save</h4>
+                  <p class="text-gray-600">
+                    Tap "Save" untuk menerapkan pengaturan DNS
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- iOS -->
+        <div id="ios-content" class="platform-panel hidden">
+          <div class="card p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Setup DNS di iOS
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Buka Settings
+                  </h4>
+                  <p class="text-gray-600">
+                    Buka aplikasi Settings di iPhone/iPad Anda
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Wi-Fi Settings
+                  </h4>
+                  <p class="text-gray-600">
+                    Tap "Wi-Fi" lalu tap ikon "i" di sebelah nama Wi-Fi yang
+                    terhubung
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Configure DNS
+                  </h4>
+                  <p class="text-gray-600">
+                    Scroll ke bawah dan tap "Configure DNS"
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">Manual DNS</h4>
+                  <p class="text-gray-600 mb-3">
+                    Pilih "Manual" dan tambahkan DNS servers:
+                  </p>
+                  <div class="bg-gray-50 p-4 rounded-lg space-y-2">
+                    <div>168.110.220.247</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  ✓
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">Save</h4>
+                  <p class="text-gray-600">
+                    Tap "Save" di pojok kanan atas untuk menerapkan pengaturan
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Router -->
+        <div id="router-content" class="platform-panel hidden">
+          <div class="card p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Setup DNS di Router
+            </h3>
+            <div class="space-y-6">
+              <div
+                class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6"
+              >
+                <div class="flex">
+                  <svg
+                    class="w-5 h-5 text-yellow-600 mr-2 mt-0.5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <div>
+                    <h4 class="font-medium text-yellow-800">Perhatian</h4>
+                    <p class="text-yellow-700 text-sm mt-1">
+                      Pengaturan ini akan mempengaruhi semua perangkat yang
+                      terhubung ke router Anda.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Akses Router Admin
+                  </h4>
+                  <p class="text-gray-600">
+                    Buka browser dan ketik IP router (biasanya 192.168.1.1 atau
+                    192.168.0.1)
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">Login</h4>
+                  <p class="text-gray-600">
+                    Masukkan username dan password admin router Anda
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Cari DNS Settings
+                  </h4>
+                  <p class="text-gray-600">
+                    Cari menu "DNS", "WAN", atau "Internet" di pengaturan router
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Set DNS Servers
+                  </h4>
+                  <p class="text-gray-600 mb-3">
+                    Ganti DNS server dengan alamat berikut:
+                  </p>
+                  <div class="bg-gray-50 p-4 rounded-lg space-y-2">
+                    <div><strong>DNS:</strong> 168.110.220.247</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold mr-4 mt-1"
+                >
+                  ✓
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Save & Restart
+                  </h4>
+                  <p class="text-gray-600">
+                    Simpan pengaturan dan restart router untuk menerapkan
+                    perubahan
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Tips -->
+    <div class="bg-blue-50 rounded-2xl p-8">
+      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+        Tips Tambahan
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex items-start">
+          <svg
+            class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Tes Koneksi</h4>
+            <p class="text-gray-600">
+              Setelah setup, coba akses situs judi atau iklan untuk memastikan
+              DNS bekerja dengan baik.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <svg
+            class="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Flush DNS Cache</h4>
+            <p class="text-gray-600">
+              Jika tidak langsung bekerja, coba flush DNS cache atau restart
+              perangkat Anda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const platformTabs = document.querySelectorAll(".platform-tab");
+    const platformPanels = document.querySelectorAll(".platform-panel");
+
+    platformTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const platform = tab.getAttribute("data-platform");
+
+        // Remove active class from all tabs and panels
+        platformTabs.forEach((t) => {
+          t.classList.remove("active", "bg-blue-600", "text-white");
+          t.classList.add("bg-gray-200", "text-gray-700", "hover:bg-gray-300");
+        });
+        platformPanels.forEach((panel) => {
+          panel.classList.add("hidden");
+          panel.classList.remove("active");
+        });
+
+        // Add active class to clicked tab
+        tab.classList.add("active", "bg-blue-600", "text-white");
+        tab.classList.remove(
+          "bg-gray-200",
+          "text-gray-700",
+          "hover:bg-gray-300",
+        );
+
+        // Show corresponding panel
+        const targetPanel = document.getElementById(`${platform}-content`);
+        if (targetPanel) {
+          targetPanel.classList.remove("hidden");
+          targetPanel.classList.add("active");
+        }
+      });
+    });
+  });
+</script>
