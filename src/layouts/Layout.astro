@@ -1,14 +1,14 @@
 ---
-export interface Props {
-  title: string;
-  description?: string;
-  keywords?: string;
-  image?: string;
-}
+// Define props with JavaScript comments instead of TypeScript interface
+// @type {Object} Props
+// @property {string} title - The title of the page
+// @property {string} [description] - The description of the page
+// @property {string} [keywords] - The keywords for the page
+// @property {string} [image] - The image for social sharing
 
 const {
   title,
-  description = "DNS Server gratis tanpa logs untuk memblokir judi online, iklan, tracker, dan telemetri. Privasi terjamin 100% dengan no-logs policy. Melindungi keluarga dengan internet yang lebih aman dan bersih.",
+  description = "DNS Server untuk memblokir judi online, iklan, tracker, dan telemetri. Privasi terjamin 100% dengan no-logs policy. Melindungi keluarga dengan internet yang lebih aman dan bersih.",
   keywords = "DNS server, no logs, tanpa logs, blok judi online, blok judol, blokir judol, blokir judi online, anti iklan, anti tracker, DNS gratis, internet aman, parental control, DNS Indonesia, privasi, zero logs, private DNS",
   image = "/og-image.png",
 } = Astro.props;
