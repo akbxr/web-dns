@@ -1,5 +1,7 @@
 AKBXR DNS - Landing Page
 
+<img width="1642" alt="Screenshot 2025-05-29 at 07 21 22" src="https://github.com/user-attachments/assets/8dd18087-3bab-48a6-a7c5-cf7b0e9c39f8" />
+
 ## 🛠️ Tech Stack
 
 - **Framework**: [Astro](https://astro.build/)
