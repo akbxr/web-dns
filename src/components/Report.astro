@@ -10,14 +10,14 @@
         Laporkan Situs
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Bantu kami meningkatkan layanan DNS dengan melaporkan situs judi yang
-        belum diblokir atau situs legal yang terblokir (false positive) melalui
-        GitHub.
+        Bantu kami meningkatkan layanan DNS dengan melaporkan situs judi, konten
+        dewasa yang belum diblokir atau situs legal yang terblokir (false
+        positive) melalui GitHub.
       </p>
     </div>
 
     <!-- Report Types -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
       <!-- Report Unblocked Gambling Sites -->
       <div class="card p-8 hover:shadow-xl transition-shadow duration-300">
         <div class="flex items-center mb-6">
@@ -36,7 +36,7 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-gray-900">
+            <h3 class="text-xl font-bold text-gray-900">
               Situs Judi Belum Diblokir
             </h3>
             <p class="text-gray-600">
@@ -69,15 +69,76 @@
           href="https://github.com/akbxr/dns/issues/new?template=block-request.md&title=[BLOCK]%20Situs%20Judi%20Belum%20Diblokir&labels=gambling,block-request"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          class="inline-flex items-center justify-center w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
         >
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path
               fill-rule="evenodd"
               d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
               clip-rule="evenodd"></path>
           </svg>
           Laporkan Situs Judi
+        </a>
+      </div>
+
+      <!-- Report Adult Content Sites -->
+      <div class="card p-8 hover:shadow-xl transition-shadow duration-300">
+        <div class="flex items-center mb-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mr-4"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zM8 6a2 2 0 114 0v1H8V6z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900">
+              Lapor Situs Pornografi
+            </h3>
+            <p class="text-gray-600">
+              Laporkan situs dewasa yang masih bisa diakses
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 mb-6">
+          <p class="text-gray-700">
+            Jika Anda menemukan situs pornografi yang masih bisa diakses
+            menggunakan DNS kami, silakan laporkan untuk segera diblokir.
+          </p>
+
+          <div class="bg-pink-50 border border-pink-200 rounded-lg p-4">
+            <h4 class="font-semibold text-pink-800 mb-2">
+              Informasi yang Diperlukan:
+            </h4>
+            <ul class="text-pink-700 text-sm space-y-1">
+              <li>• URL lengkap situs dewasa</li>
+              <li>• Jenis konten (pornografi, dating dewasa, dll)</li>
+              <li>• Waktu akses situs tersebut</li>
+            </ul>
+          </div>
+        </div>
+
+        <a
+          href="https://github.com/akbxr/dns/issues/new?template=block-request.md&title=[BLOCK]%20Konten%20Dewasa%20Belum%20Diblokir&labels=adult-content,block-request"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center w-full bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+        >
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zM8 6a2 2 0 114 0v1H8V6z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Laporkan Konten Dewasa
         </a>
       </div>
 
@@ -99,7 +160,7 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-gray-900">
+            <h3 class="text-xl font-bold text-gray-900">
               Situs Legal Terblokir
             </h3>
             <p class="text-gray-600">Laporkan situs legal yang terblokir</p>
@@ -109,7 +170,8 @@
         <div class="space-y-4 mb-6">
           <p class="text-gray-700">
             Jika situs legal atau penting terblokir secara tidak sengaja (false
-            positive), silakan laporkan untuk segera diperbaiki.
+            positive) dan mengalami masalah, silakan laporkan untuk segera
+            diperbaiki.
           </p>
 
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
@@ -129,9 +191,9 @@
           href="https://github.com/akbxr/dns/issues/new?template=false-positive.md&title=[FALSE%20POSITIVE]%20Situs%20Legal%20Terblokir&labels=false-positive,unblock-request"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          class="inline-flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path
               fill-rule="evenodd"
               d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm8 0a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1h-4a1 1 0 01-1-1V8zm0 4a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1h-4a1 1 0 01-1-1v-2z"
