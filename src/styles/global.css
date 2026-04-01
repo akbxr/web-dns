@@ -5,27 +5,49 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: theme('colors.util-bg');
+    color: theme('colors.util-text');
   }
 
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply font-sans antialiased text-sm md:text-base selection:bg-util-accent selection:text-white bg-grid-pattern;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-util-heading tracking-tight font-medium;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center bg-util-heading text-util-bg font-mono text-sm uppercase px-6 py-3 border border-util-heading transition-all duration-200 hover:bg-transparent hover:text-util-heading focus:outline-none focus:ring-1 focus:ring-util-heading focus:ring-offset-1 focus:ring-offset-util-bg;
   }
 
   .btn-secondary {
-    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center bg-transparent text-util-text font-mono text-sm uppercase px-6 py-3 border border-util-border transition-all duration-200 hover:bg-util-surface hover:text-util-heading focus:outline-none focus:ring-1 focus:ring-util-border;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center bg-util-accent text-white font-mono text-sm uppercase px-6 py-3 border border-util-accent transition-all duration-200 hover:bg-transparent hover:text-util-accent focus:outline-none focus:ring-1 focus:ring-util-accent;
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100;
+    @apply bg-util-surface border border-util-border p-6 transition-all duration-300 hover:border-util-text/30;
   }
 
   .dns-address {
-    @apply bg-gray-100 border border-gray-200 rounded-lg p-4 font-mono text-sm break-all;
+    @apply flex items-center justify-between bg-util-bg border border-util-border p-4 font-mono text-sm text-util-heading transition-colors hover:border-util-text/50;
+  }
+  
+  .copy-btn {
+    @apply text-util-text hover:text-util-heading transition-colors p-2 -m-2;
+  }
+  
+  .section-border {
+    @apply border-b border-util-border;
+  }
+  
+  .container-util {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-x border-util-border/50;
   }
 }

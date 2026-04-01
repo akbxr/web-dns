@@ -2,189 +2,179 @@
 
 ---
 
-<section id="dns" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="dns" class="py-24 border-b border-util-border relative">
+  <div class="container-util">
     <!-- Section header -->
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-        DNS Server Address
+    <div class="mb-16 border-b border-util-border pb-8">
+      <div class="inline-flex items-center space-x-2 mb-4">
+        <span
+          class="text-xs font-mono text-util-accent uppercase tracking-widest"
+          >// DEPLOYMENT CONFIG</span
+        >
+      </div>
+      <h2
+        class="text-3xl sm:text-5xl font-medium text-util-heading tracking-tight mb-6"
+      >
+        ALAMAT DNS SERVER
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Gunakan salah satu alamat DNS di bawah ini untuk mulai menikmati
-        internet yang lebih aman, bersih, dan terlindungi dari konten dewasa
-        serta judi online.
+      <p class="text-lg text-util-text max-w-2xl font-light">
+        Pasang DNS ke dalam sistem. Cocok untuk semua router, operating system,
+        dan modern browser.
       </p>
     </div>
 
-    <!-- DNS Address Cards -->
-    <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-12">
-      <!-- DoH and DoT Section -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div class="card p-8">
-          <div class="flex items-center mb-6">
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4"
+    <!-- DNS Configurations -->
+    <div
+      class="grid grid-cols-1 gap-px bg-util-border border border-util-border"
+    >
+      <!-- DoT -->
+      <div
+        class="bg-util-surface p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 group hover:bg-util-surface-hover transition-colors"
+      >
+        <div class="max-w-md">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-1.5 h-1.5 bg-util-accent animate-pulse-slow"></div>
+            <h3
+              class="text-2xl font-mono font-bold text-util-heading tracking-tight"
             >
+              DNS-over-TLS [DoT]
+            </h3>
+          </div>
+          <p class="text-util-text font-light leading-relaxed">
+            Protokol enkripsi native untuk Private DNS di Android 9+ dan router
+            modern (MikroTik, OpenWrt).
+          </p>
+        </div>
+        <div class="w-full md:w-auto">
+          <div class="dns-address">
+            <span class="mr-8">dns.akbxr.com</span>
+            <button class="copy-btn" data-copy="dns.akbxr.com">
               <svg
-                class="w-6 h-6 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
                 <path
-                  fill-rule="evenodd"
-                  d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
+                  stroke-linecap="square"
+                  stroke-linejoin="miter"
+                  stroke-width="1.5"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
               </svg>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900">DNS over TLS</h3>
-              <p class="text-gray-600">DoT untuk privasi maksimal</p>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2"
-              >DoT Hostname</label
-            >
-            <div class="dns-address flex items-center justify-between">
-              <span class="dns-text">dns.akbxr.com</span>
-              <button
-                class="copy-btn text-blue-600 hover:text-blue-800 p-2 rounded-md hover:bg-blue-50 transition-colors"
-                data-copy="dns.akbxr.com"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
-                  ></path>
-                  <path
-                    d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"
-                  ></path>
-                </svg>
-              </button>
-            </div>
+            </button>
           </div>
         </div>
-
-        <!-- DNS over HTTPS -->
-        <div class="card p-8">
-          <div class="flex items-center mb-6">
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-4"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900">DNS over HTTPS</h3>
-              <p class="text-gray-600">DoH untuk keamanan ekstra</p>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2"
-              >DoH URL</label
-            >
-            <div class="dns-address flex items-center justify-between">
-              <span class="dns-text text-sm"
-                >https://dns.akbxr.com/dns-query</span
-              >
-              <button
-                class="copy-btn text-blue-600 hover:text-blue-800 p-2 rounded-md hover:bg-blue-50 transition-colors"
-                data-copy="https://dns.akbxr.com/dns-query"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
-                  ></path>
-                  <path
-                    d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- DNS over TLS -->
       </div>
 
-      <!-- IPv4 DNS -->
-      <div class="card p-8">
-        <div class="flex items-center mb-6">
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center mr-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
+      <!-- DoH -->
+      <div
+        class="bg-util-surface p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 group hover:bg-util-surface-hover transition-colors"
+      >
+        <div class="max-w-md">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-1.5 h-1.5 bg-util-text"></div>
+            <h3
+              class="text-2xl font-mono font-bold text-util-heading tracking-tight"
             >
-              <path
-                fill-rule="evenodd"
-                d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm8 0a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1h-4a1 1 0 01-1-1V8zm0 4a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1h-4a1 1 0 01-1-1v-2z"
-                clip-rule="evenodd"></path>
-            </svg>
+              DNS-over-HTTPS [DoH]
+            </h3>
           </div>
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900">IPv4 DNS</h3>
-            <p class="text-gray-600">Untuk koneksi IPv4 standar</p>
+          <p class="text-util-text font-light leading-relaxed">
+            Melewati firewall jaringan melalui port 443. Direkomendasikan untuk
+            konfigurasi Chrome, Firefox, Edge, Safari.
+          </p>
+        </div>
+        <div class="w-full md:w-auto">
+          <div class="dns-address">
+            <span class="mr-8">https://dns.akbxr.com/dns-query</span>
+            <button
+              class="copy-btn"
+              data-copy="https://dns.akbxr.com/dns-query"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="square"
+                  stroke-linejoin="miter"
+                  stroke-width="1.5"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
+      </div>
 
-        <div class="space-y-4">
-          <div>
-            <div class="dns-address flex items-center justify-between">
-              <span class="dns-text">168.110.220.247</span>
-              <button
-                class="copy-btn text-blue-600 hover:text-blue-800 p-2 rounded-md hover:bg-blue-50 transition-colors"
-                data-copy="168.110.220.247"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
-                  ></path>
-                  <path
-                    d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"
-                  ></path>
-                </svg>
-              </button>
+      <!-- IPv4 -->
+      <div
+        class="bg-util-surface p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 group hover:bg-util-surface-hover transition-colors"
+      >
+        <div class="max-w-md">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-1.5 h-1.5 bg-util-border border border-util-text">
             </div>
+            <h3
+              class="text-2xl font-mono font-bold text-util-text tracking-tight"
+            >
+              Legacy IPv4
+            </h3>
+          </div>
+          <p class="text-util-text/70 font-light leading-relaxed">
+            Koneksi raw non-enkripsi port 53. Hanya gunakan jika perangkat Anda
+            tidak mendukung DoT/DoH (contoh: Smart TV lama, Konsol lawas).
+          </p>
+        </div>
+        <div class="w-full md:w-auto">
+          <div
+            class="dns-address bg-util-bg/50 border-util-border/50 text-util-text"
+          >
+            <span class="mr-8">168.110.220.247</span>
+            <button
+              class="copy-btn text-util-text/50"
+              data-copy="168.110.220.247"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="square"
+                  stroke-linejoin="miter"
+                  stroke-width="1.5"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Copy to clipboard functionality -->
+    <!-- Script to handle copy -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const copyButtons = document.querySelectorAll(".copy-btn");
-
         copyButtons.forEach((button) => {
           button.addEventListener("click", async (e) => {
             e.preventDefault();
-            const textToCopy = button.getAttribute("data-copy");
-
+            const textToCopy = button.getAttribute("data-copy") || "";
             try {
               await navigator.clipboard.writeText(textToCopy);
-
-              // Visual feedback
               const originalHTML = button.innerHTML;
-              button.innerHTML = `
-            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-            </svg>
-          `;
-
+              button.innerHTML =
+                '<span class="text-xs font-mono text-util-accent uppercase">COPIED</span>';
               setTimeout(() => {
                 button.innerHTML = originalHTML;
               }, 2000);
             } catch (err) {
-              console.error("Failed to copy: ", err);
+              console.error("Copy failed: ", err);
             }
           });
         });

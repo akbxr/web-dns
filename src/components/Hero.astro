@@ -4,174 +4,97 @@
 
 <section
   id="home"
-  class="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20 lg:py-32 overflow-hidden"
+  class="relative pt-24 pb-16 md:pt-32 md:pb-24 border-b border-util-border overflow-hidden"
 >
-  <!-- Background decoration -->
-  <div class="absolute inset-0 overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 z-0 pointer-events-none opacity-20">
     <div
-      class="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"
+      class="absolute top-1/4 right-1/4 w-96 h-96 bg-util-accent/20 blur-[120px] rounded-full"
     >
     </div>
     <div
-      class="absolute -bottom-40 -left-32 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"
+      class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-util-surface/50 blur-[80px] rounded-full"
     >
     </div>
   </div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <!-- Badge -->
-      <div
-        class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-8"
-      >
-        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fill-rule="evenodd"
-            d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-            clip-rule="evenodd"></path>
-        </svg>
-        DNS Anti Judol, Iklan & Pornografi
-      </div>
+  <div class="container-util relative z-10">
+    <div class="max-w-4xl">
+      <!-- <div class="inline-flex items-center space-x-2 border border-util-border bg-util-surface px-3 py-1 mb-8 animate-fade-in">
+        <span class="w-2 h-2 bg-util-accent animate-blink"></span>
+        <span class="text-xs font-mono text-util-text uppercase tracking-wider">System Online // No Logs</span>
+      </div> -->
 
-      <!-- Main heading -->
       <h1
-        class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+        class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter text-util-heading mb-6 leading-none animate-slide-up"
+        style="animation-delay: 0.1s"
       >
-        Blokir <span
-          class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-          >Judi Online</span
-        >,
-        <br class="hidden sm:block" />Iklan, Pornografi & Tracker
+        INTERNET <span class="text-util-accent italic">BERSIH.</span><br />
+        TANPA <span class="text-util-border line-through decoration-util-accent"
+          >GANGGUAN.</span
+        >
       </h1>
 
-      <!-- Subtitle -->
       <p
-        class="text-xl sm:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed"
+        class="text-lg md:text-xl text-util-text mb-10 max-w-2xl font-light leading-relaxed animate-slide-up"
+        style="animation-delay: 0.2s"
       >
-        DNS server gratis untuk melindungi dari konten berbahaya, memblokir judi
-        online, konten dewasa, iklan mengganggu, tracker, dan telemetri yang
-        tidak diinginkan.
+        DNS server untuk memblokir judi online, iklan, pornografi, tracker, dan
+        telemetri. Privasi terjamin 100% dengan no-logs policy.
       </p>
 
-      <!-- Features list -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <div
-          class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100"
-        >
-          <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-          <span class="text-sm font-medium text-gray-700"
-            >Blokir Judi Online</span
+      <div
+        class="flex flex-col sm:flex-row gap-4 animate-slide-up"
+        style="animation-delay: 0.3s"
+      >
+        <a href="#dns" class="btn-primary group">
+          <span>Inisialisasi Setup</span>
+          <svg
+            class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-        </div>
-        <div
-          class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100"
-        >
-          <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-          <span class="text-sm font-medium text-gray-700">Anti Iklan</span>
-        </div>
-        <div
-          class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100"
-        >
-          <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-          <span class="text-sm font-medium text-gray-700">Blokir Tracker</span>
-        </div>
-        <div
-          class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100"
-        >
-          <div class="w-2 h-2 bg-pink-500 rounded-full mr-2"></div>
-          <span class="text-sm font-medium text-gray-700"
-            >Blokir Pornografi</span
-          >
-        </div>
-        <div
-          class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100"
-        >
-          <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-          <span class="text-sm font-medium text-gray-700">Anti Telemetri</span>
-        </div>
-        <div
-          class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100"
-        >
-          <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-          <span class="text-sm font-medium text-gray-700">No Logs</span>
-        </div>
+            <path
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+        <a href="#features" class="btn-secondary"> Fitur </a>
       </div>
 
-      <!-- CTA buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="#dns" class="btn-primary text-lg px-4 py-3">
-          <svg
-            class="w-5 h-5 mr-2 inline"
-            fill="currentColor"
-            viewBox="0 0 20 20"
+      <!-- Stats / Technical Output -->
+      <div
+        class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-util-border border border-util-border animate-slide-up"
+        style="animation-delay: 0.4s"
+      >
+        <div class="bg-util-bg p-4 flex flex-col">
+          <span class="text-xs font-mono text-util-text uppercase mb-1"
+            >Latency</span
           >
-            <path
-              fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
-              clip-rule="evenodd"></path>
-          </svg>
-          Dapatkan DNS Address
-        </a>
-        <a href="#features" class="btn-secondary text-lg px-4 py-3">
-          <svg
-            class="w-5 h-5 mr-2 inline"
-            fill="currentColor"
-            viewBox="0 0 20 20"
+          <span class="text-xl font-mono text-util-heading">&lt; 20ms</span>
+        </div>
+        <div class="bg-util-bg p-4 flex flex-col">
+          <span class="text-xs font-mono text-util-text uppercase mb-1"
+            >Uptime</span
           >
-            <path
-              fill-rule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-              clip-rule="evenodd"></path>
-          </svg>
-          Pelajari Fitur
-        </a>
-        <a
-          href="#report"
-          class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-lg"
-        >
-          <svg
-            class="w-5 h-5 mr-2 inline"
-            fill="currentColor"
-            viewBox="0 0 20 20"
+          <span class="text-xl font-mono text-util-heading">99.9%</span>
+        </div>
+        <div class="bg-util-bg p-4 flex flex-col">
+          <span class="text-xs font-mono text-util-text uppercase mb-1"
+            >Blocklist</span
           >
-            <path
-              fill-rule="evenodd"
-              d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          Laporkan Situs
-        </a>
-      </div>
-
-      <!-- Stats -->
-      <div class="mt-16 grid grid-cols-2 md:grid-cols-5 gap-8">
-        <div class="text-center">
-          <div class="text-3xl font-bold text-gray-900 mb-2">99.9%</div>
-          <div class="text-sm text-gray-600">Uptime</div>
+          <span class="text-xl font-mono text-util-heading">5M+ Rules</span>
         </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-gray-900 mb-2">5 Jt++</div>
-          <div class="text-sm text-gray-600">Domain Diblokir</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-gray-900 mb-2">&lt;10ms</div>
-          <div class="text-sm text-gray-600">Response Time</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-gray-900 mb-2">0</div>
-          <div class="text-sm text-gray-600">Logs Tersimpan</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-gray-900 mb-2">100%</div>
-          <div class="text-sm text-gray-600">Gratis</div>
+        <div class="bg-util-bg p-4 flex flex-col">
+          <span class="text-xs font-mono text-util-text uppercase mb-1"
+            >Privacy</span
+          >
+          <span class="text-xl font-mono text-util-accent">Zero Logs</span>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-</style>
