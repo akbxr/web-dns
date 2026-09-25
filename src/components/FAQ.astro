@@ -1,0 +1,90 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
+  {
+    question: "Apa itu AKBXR DNS dan apa fungsinya?",
+    answer:
+      "AKBXR DNS adalah layanan Domain Name System (DNS) publik independen asal Indonesia yang mengamankan koneksi internet Anda. Sistem ini secara otomatis memblokir akses ke situs judi online (judol), iklan pop-up/banner, tracker analitik, malware phising, dan konten berbahaya sebelum sempat dimuat di perangkat Anda.",
+  },
+  {
+    question: "Apakah AKBXR DNS benar-benar gratis dan no-logs?",
+    answer:
+      "Ya, AKBXR DNS 100% gratis tanpa biaya langganan. Kami menerapkan kebijakan privasi ketat Zero-Logs: kami tidak pernah merekam, menyimpan, memprofilkan, atau menjual aktivitas penelusuran (browsing history) dan alamat IP pengguna kepada siapa pun.",
+  },
+  {
+    question: "Bagaimana cara kerja pemblokiran situs judi dan iklan?",
+    answer:
+      "AKBXR DNS menggunakan teknik DNS Sinkholing dengan database lebih dari 7 juta aturan filter yang terus diperbarui. Saat aplikasi atau browser meminta domain situs judi online atau server iklan, server DNS langsung mengembalikan respon NXDOMAIN (0.0.0.0), sehingga konten berbahaya tersebut gagal dimuat seketika.",
+  },
+  {
+    question:
+      "Apa perbedaan antara DNS over TLS (DoT) dan DNS over HTTPS (DoH)?",
+    answer:
+      "DoT (DNS over TLS) berjalan di port 853 dan mengenkripsi seluruh permintaan DNS sistem — fitur ini merupakan standar 'Private DNS' bawaan Android. Sedangkan DoH (DNS over HTTPS) berjalan di port 443 membungkus kueri DNS di dalam lalu lintas HTTPS biasa (cocok untuk browser modern, iOS, dan Windows 11), sehingga sulit diblokir atau diintip oleh ISP lokal.",
+  },
+  {
+    question: "Apakah menggunakan AKBXR DNS memperlambat koneksi internet?",
+    answer:
+      "Tidak. Selain itu, dengan memblokir aset iklan berat, skrip pelacak, dan banner video otomatis, halaman web justru akan terbuka lebih cepat serta menghemat kuota data seluler Anda.",
+  },
+  {
+    question: "Perangkat apa saja yang bisa menggunakan AKBXR DNS?",
+    answer:
+      "Semua perangkat modern didukung: Android (melalui fitur Private DNS atau aplikasi Rethink/Intra), iPhone & iPad (melalui DNS Profile / konfigurasi WiFi), Windows 10/11, macOS, Linux, serta Router jaringan (MikroTik, OpenWrt, dll).",
+  },
+  {
+    question:
+      "Bagaimana jika ada situs yang salah terblokir atau situs judi baru yang belum terdeteksi?",
+    answer:
+      "Anda dapat berkontribusi melaporkannya di bagian 'Laporkan Situs' di bawah atau melalui issue GitHub kami. Laporan false-positive (situs legal yang tidak sengaja terblokir) dan lapor domain judi baru akan ditinjau dan diperbarui secara berkala.",
+  },
+];
+---
+
+<section id="faq" class="py-24 border-b border-util-border relative">
+  <div class="container-util">
+    <!-- Section header -->
+    <div class="mb-16 border-b border-util-border pb-8">
+      <div class="inline-flex items-center space-x-2 mb-4">
+        <span class="text-xs font-mono text-util-accent uppercase tracking-widest">
+          // KNOWLEDGE BASE & PERTANYAAN
+        </span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-medium text-util-heading tracking-tight mb-6">
+        PERTANYAAN UMUM (FAQ)
+      </h2>
+      <p class="text-lg text-util-text max-w-2xl font-light">
+        Jawaban lengkap mengenai privasi, mekanisme filtrasi, dan panduan
+        konfigurasi AKBXR DNS.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion List -->
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group border border-util-border bg-util-surface transition-colors hover:border-util-text/40">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none select-none focus:outline-none focus:bg-util-surface-hover">
+            <div class="flex items-center space-x-4 pr-4">
+              <span class="font-mono text-xs text-util-accent">
+                0{index + 1}
+              </span>
+              <h3 class="text-base sm:text-lg font-medium text-util-heading tracking-normal">
+                {faq.question}
+              </h3>
+            </div>
+            <span class="text-util-accent font-mono text-xl transform transition-transform duration-200 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-2 border-t border-util-border/40 text-util-text font-light leading-relaxed text-sm sm:text-base">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

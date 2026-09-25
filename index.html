@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Website Diblokir - AKBXR DNS</title>
+    <meta
+      name="description"
+      content="Website ini telah diblokir oleh AKBXR DNS karena mengandung konten yang tidak sesuai seperti iklan berbahaya, judi online, pornografi, atau konten berbahaya lainnya."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #ffe135;
+        color: #000000;
+        min-height: 100vh;
+        padding: 2rem;
+        position: relative;
+      }
+
+      /* Brutalist background pattern */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          linear-gradient(
+            45deg,
+            transparent 47%,
+            #000 47%,
+            #000 53%,
+            transparent 53%
+          ),
+          linear-gradient(
+            -45deg,
+            transparent 47%,
+            #000 47%,
+            #000 53%,
+            transparent 53%
+          );
+        background-size: 60px 60px;
+        opacity: 0.03;
+        z-index: -1;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 2rem);
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          min-height: calc(100vh - 4rem);
+        }
+      }
+
+      .card {
+        background: #ffffff;
+        border: 4px solid #000000;
+        border-radius: 0;
+        padding: 1.5rem;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 6px 6px 0px #000000;
+        position: relative;
+        margin: 1rem;
+      }
+
+      @media (min-width: 480px) {
+        .card {
+          border: 6px solid #000000;
+          padding: 2rem;
+          box-shadow: 8px 8px 0px #000000;
+          margin: 1.5rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .card {
+          padding: 3rem;
+          box-shadow: 12px 12px 0px #000000;
+          margin: 2rem;
+        }
+      }
+
+      .icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1.5rem;
+        background: #ff3333;
+        border: 3px solid #000000;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 4px 4px 0px #000000;
+        transform: rotate(-3deg);
+      }
+
+      @media (min-width: 480px) {
+        .icon {
+          width: 80px;
+          height: 80px;
+          border: 4px solid #000000;
+          box-shadow: 5px 5px 0px #000000;
+          margin: 0 auto 2rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .icon {
+          width: 100px;
+          height: 100px;
+          box-shadow: 6px 6px 0px #000000;
+        }
+      }
+
+      .icon svg {
+        width: 30px;
+        height: 30px;
+        color: #ffffff;
+        stroke-width: 3;
+      }
+
+      @media (min-width: 480px) {
+        .icon svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .icon svg {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      .title {
+        font-size: 1.8rem;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        line-height: 0.9;
+        transform: rotate(1deg);
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #000000;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      @media (min-width: 480px) {
+        .subtitle {
+          font-size: 1rem;
+          letter-spacing: 0.8px;
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .subtitle {
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+          margin-bottom: 3rem;
+        }
+      }
+
+      .alert {
+        background: #ff3333;
+        border: 4px solid #000000;
+        border-radius: 0;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 6px 6px 0px #000000;
+        transform: rotate(-1deg);
+      }
+
+      .alert-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .alert-icon {
+        width: 32px;
+        height: 32px;
+        color: #ffffff;
+        flex-shrink: 0;
+        margin-top: 2px;
+        stroke-width: 3;
+      }
+
+      .alert-text h3 {
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .alert-text p {
+        color: #ffffff;
+        font-size: 1rem;
+        line-height: 1.4;
+        font-weight: 600;
+      }
+
+      .reasons {
+        margin-bottom: 2rem;
+      }
+
+      .reasons h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .reason-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+
+      @media (min-width: 480px) {
+        .reason-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .reason-grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+      }
+
+      .reason-item {
+        background: #33ff33;
+        border: 2px solid #000000;
+        border-radius: 0;
+        padding: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        transition: all 0.2s ease;
+        cursor: default;
+        box-shadow: 3px 3px 0px #000000;
+      }
+
+      @media (min-width: 480px) {
+        .reason-item {
+          border: 3px solid #000000;
+          padding: 1rem;
+          gap: 1rem;
+          box-shadow: 4px 4px 0px #000000;
+        }
+      }
+
+      .reason-item:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: 4px 4px 0px #000000;
+      }
+
+      @media (min-width: 480px) {
+        .reason-item:hover {
+          transform: translate(-2px, -2px);
+          box-shadow: 6px 6px 0px #000000;
+        }
+      }
+
+      .reason-item:nth-child(2) {
+        background: #ff4040;
+      }
+
+      .reason-item:nth-child(3) {
+        background: #9d7cd8;
+      }
+
+      .reason-item:nth-child(4) {
+        background: #33ffff;
+      }
+
+      .reason-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 0;
+        background: #000000;
+        flex-shrink: 0;
+      }
+
+      .reason-text {
+        color: #000000;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+
+      @media (min-width: 480px) {
+        .reason-text {
+          font-size: 0.9rem;
+          letter-spacing: 0.4px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .reason-text {
+          font-size: 1rem;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      .info {
+        background: #3333ff;
+        border: 4px solid #000000;
+        border-radius: 0;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 6px 6px 0px #000000;
+        transform: rotate(1deg);
+      }
+
+      .info-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .info-icon {
+        width: 32px;
+        height: 32px;
+        color: #ffffff;
+        flex-shrink: 0;
+        margin-top: 2px;
+        stroke-width: 3;
+      }
+
+      .info-text h3 {
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .info-text p {
+        color: #ffffff;
+        font-size: 1rem;
+        line-height: 1.4;
+        font-weight: 600;
+      }
+
+      .url-section {
+        margin-bottom: 2rem;
+      }
+
+      .url-label {
+        color: #000000;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .url-display {
+        background: #000000;
+        color: #33ff33;
+        border: 4px solid #000000;
+        border-radius: 0;
+        padding: 1rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        font-weight: 600;
+        word-break: break-all;
+        box-shadow: 4px 4px 0px #666666;
+      }
+
+      .timestamp {
+        color: #666666;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (min-width: 480px) {
+        .actions {
+          flex-direction: row;
+          gap: 1rem;
+        }
+      }
+
+      .btn {
+        flex: 1;
+        padding: 1rem 1.2rem;
+        border: 3px solid #000000;
+        border-radius: 0;
+        font-size: 0.9rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        font-family: "Inter", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        box-shadow: 3px 3px 0px #000000;
+      }
+
+      @media (min-width: 480px) {
+        .btn {
+          padding: 1.1rem 1.3rem;
+          border: 4px solid #000000;
+          font-size: 0.95rem;
+          letter-spacing: 0.9px;
+          box-shadow: 4px 4px 0px #000000;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .btn {
+          padding: 1.2rem 1.5rem;
+          font-size: 1rem;
+          letter-spacing: 1px;
+        }
+      }
+
+      .btn-primary {
+        background: #ff3333;
+        color: #ffffff;
+      }
+
+      .btn-primary:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: 4px 4px 0px #000000;
+      }
+
+      @media (min-width: 480px) {
+        .btn-primary:hover {
+          transform: translate(-2px, -2px);
+          box-shadow: 6px 6px 0px #000000;
+        }
+      }
+
+      .btn-secondary {
+        background: #ffffff;
+        color: #000000;
+      }
+
+      .btn-secondary:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: 4px 4px 0px #000000;
+      }
+
+      @media (min-width: 480px) {
+        .btn-secondary:hover {
+          transform: translate(-2px, -2px);
+          box-shadow: 6px 6px 0px #000000;
+        }
+      }
+
+      .help-section {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 4px solid #000000;
+        text-align: center;
+      }
+
+      .help-title {
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .help-text {
+        color: #000000;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .help-link {
+        color: #ff3333;
+        text-decoration: none;
+        font-weight: 800;
+        transition: color 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 3px solid #ff3333;
+        padding-bottom: 2px;
+      }
+
+      .help-link:hover {
+        color: #000000;
+        border-bottom-color: #000000;
+      }
+
+      .footer {
+        text-align: center;
+        padding-top: 2rem;
+        color: #000000;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .footer-icon {
+        width: 20px;
+        height: 20px;
+        color: #3333ff;
+        stroke-width: 3;
+      }
+
+      /* Decorative elements */
+      .decoration {
+        position: absolute;
+        border: 3px solid #000000;
+        background: transparent;
+      }
+
+      .decoration-1 {
+        width: 30px;
+        height: 30px;
+        top: -15px;
+        left: -15px;
+        background: #ff3333;
+        transform: rotate(45deg);
+      }
+
+      .decoration-2 {
+        width: 25px;
+        height: 25px;
+        bottom: -12px;
+        right: -12px;
+        background: #33ff33;
+        border-radius: 50%;
+      }
+
+      .decoration-3 {
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        right: -10px;
+        background: #3333ff;
+      }
+
+      /* Additional responsive enhancements */
+      @media (max-width: 360px) {
+        .card {
+          margin: 0.5rem;
+          padding: 1rem;
+          border: 2px solid #000000;
+          box-shadow: 4px 4px 0px #000000;
+        }
+
+        .title {
+          font-size: 1.5rem;
+          letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+          font-size: 0.8rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .icon {
+          width: 50px;
+          height: 50px;
+          margin: 0 auto 1rem;
+        }
+
+        .icon svg {
+          width: 25px;
+          height: 25px;
+        }
+
+        .reason-text {
+          font-size: 0.75rem;
+        }
+
+        .btn {
+          padding: 0.9rem 1rem;
+          font-size: 0.8rem;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      /* Large desktop optimization */
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .card {
+          max-width: 700px;
+          padding: 4rem;
+        }
+
+        .title {
+          font-size: 3.5rem;
+        }
+
+        .subtitle {
+          font-size: 1.4rem;
+        }
+      }
+
+      /* Loading animation */
+      .loading {
+        animation: brutal-blink 1s ease-in-out infinite;
+      }
+
+      @keyframes brutal-blink {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        51%,
+        100% {
+          opacity: 0.3;
+        }
+      }
+
+      /* Glitch effect for title */
+      .title::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 40px;
+        color: #ff3333;
+        z-index: -1;
+        animation: glitch 2s infinite;
+      }
+
+      .title::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 40px;
+        color: #3333ff;
+        z-index: -2;
+        animation: glitch 2s infinite reverse;
+      }
+
+      @keyframes glitch {
+        0%,
+        100% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-1px, 1px);
+        }
+        40% {
+          transform: translate(-1px, -1px);
+        }
+        60% {
+          transform: translate(1px, 1px);
+        }
+        80% {
+          transform: translate(1px, -1px);
+        }
+      }
+
+      /* Shake animation for page load */
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: translateX(-5px);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          transform: translateX(5px);
+        }
+      }
+
+      .shake-on-load {
+        animation: shake 0.8s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <!-- Decorative elements -->
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+        <div class="decoration decoration-3"></div>
+
+        <div class="icon">
+          <svg
+            fill="#000000"
+            height="200px"
+            width="200px"
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 219.328 219.328"
+            xml:space="preserve"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M185.726,30.746c-0.086-0.096-0.168-0.195-0.26-0.287c-0.198-0.198-0.406-0.381-0.62-0.552 C165.201,11.377,138.738,0,109.666,0C49.198,0,0.003,49.196,0.003,109.668c0.002,29.059,11.369,55.51,29.884,75.152 c0.177,0.224,0.365,0.441,0.572,0.647c0.107,0.106,0.22,0.2,0.331,0.299c19.957,20.679,47.94,33.562,78.877,33.562 c60.466,0,109.659-49.193,109.659-109.661C219.325,78.707,206.427,50.706,185.726,30.746z M109.666,15 c22.538,0,43.256,7.923,59.53,21.123L36.125,169.194c-13.198-16.273-21.12-36.991-21.122-59.527C15.003,57.468,57.469,15,109.666,15 z M109.666,204.328c-24.269,0-46.432-9.186-63.204-24.258l133.61-133.609c15.07,16.772,24.253,38.936,24.253,63.206 C204.325,161.863,161.861,204.328,109.666,204.328z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+
+        <h1 class="title" data-text="WEBSITE DIBLOKIR">WEBSITE DIBLOKIR</h1>
+        <p class="subtitle">AKSES DIBLOKIR AKBXR DNS</p>
+
+        <div class="alert">
+          <div class="alert-content">
+            <div class="alert-text">
+              <h3>BAHAYA TERDETEKSI!</h3>
+              <p>
+                Website ini mengandung konten berbahaya dan telah diblokir untuk
+                melindungi Anda!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reasons">
+          <h2>KATEGORI BLOKIR:</h2>
+          <div class="reason-grid">
+            <div class="reason-item">
+              <div class="reason-dot"></div>
+              <span class="reason-text">IKLAN BERBAHAYA</span>
+            </div>
+            <div class="reason-item">
+              <div class="reason-dot"></div>
+              <span class="reason-text">JUDI ONLINE</span>
+            </div>
+            <div class="reason-item">
+              <div class="reason-dot"></div>
+              <span class="reason-text">PORNOGRAFI</span>
+            </div>
+            <div class="reason-item">
+              <div class="reason-dot"></div>
+              <span class="reason-text">MALWARE & PHISHING</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="info-content">
+            <div class="info-text">
+              <h3>PERLINDUNGAN AKTIF</h3>
+              <p>
+                AKBXR DNS melindungi Anda 24/7 dari ancaman internet dengan
+                teknologi pemblokiran real-time!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a href="https://dns.akbxr.com" class="btn btn-secondary">
+            INFO DNS
+          </a>
+        </div>
+
+        <div class="help-section">
+          <h3 class="help-title">SALAH BLOKIR?</h3>
+          <p class="help-text">
+            Jika Anda yakin website ini aman dan ingin melaporkan kesalahan
+            pemblokiran
+          </p>
+          <a
+            href="https://github.com/akbxr/dns/issues/new?template=false-positive.md&title=[FALSE%20POSITIVE]%20Situs%20Legal%20Terblokir&labels=false-positive,unblock-request"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="help-link"
+          >
+            LAPORKAN →
+          </a>
+        </div>
+
+        <div class="footer">
+          <div class="footer-brand">
+            <svg
+              class="footer-icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+              />
+            </svg>
+            <span>DILINDUNGI AKBXR DNS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Keyboard shortcuts
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            history.back();
+          } else if (e.key === "Enter" && e.ctrlKey) {
+            window.location.href = "https://dns.akbxr.com";
+          }
+        });
+
+        // Add shake animation on page load
+        const card = document.querySelector(".card");
+        setTimeout(() => {
+          card.classList.add("shake-on-load");
+          setTimeout(() => {
+            card.classList.remove("shake-on-load");
+          }, 800);
+        }, 300);
+
+        // Add random rotation to elements
+        const elements = document.querySelectorAll(
+          ".reason-item, .alert, .info",
+        );
+        elements.forEach((el, index) => {
+          const rotation = (Math.random() - 0.5) * 4; // -2 to 2 degrees
+          el.style.transform = `rotate(${rotation}deg)`;
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -5,6 +5,7 @@ const navItems = [
   { name: "DNS", href: "#dns" },
   { name: "Setup", href: "#setup" },
   { name: "Laporan", href: "#report" },
+  { name: "FAQ", href: "#faq" },
 ];
 ---
 
@@ -13,36 +14,35 @@ const navItems = [
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="#" class="flex items-center space-x-3 group">
-          <!-- <div class="w-8 h-8 bg-util-heading flex items-center justify-center border border-util-heading group-hover:bg-transparent transition-colors">
-            <svg class="w-4 h-4 text-util-bg group-hover:text-util-heading transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div> -->
-          <span class="text-xl font-mono text-util-heading font-bold uppercase tracking-widest">AKBXR<span class="text-util-accent">_</span>DNS</span>
+        <a
+          href="/"
+          aria-label="AKBXR DNS"
+          class="flex items-center space-x-3 group"
+        >
+          <span class="text-xl font-mono text-util-heading font-bold uppercase tracking-widest">
+            AKBXR<span class="text-util-accent">_</span>DNS
+          </span>
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-1">
         <div class="flex space-x-1 border border-util-border bg-util-surface/50 p-1">
-          {
-            navItems.map((item) => (
-              <a
-                href={item.href}
-                class="text-util-text font-mono hover:text-util-heading hover:bg-util-surface px-4 py-1.5 text-xs uppercase tracking-widest transition-all duration-200"
-              >
-                {item.name}
-              </a>
-            ))
-          }
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-util-text font-mono hover:text-util-heading hover:bg-util-surface px-4 py-1.5 text-xs uppercase tracking-widest transition-all duration-200"
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       </div>
 
       <!-- CTA Button -->
       <div class="hidden md:flex items-center space-x-4">
         <a href="#dns" class="btn-accent text-xs px-4 py-2">
-         Mulai Sekarang
+          Mulai Sekarang
         </a>
       </div>
 
@@ -54,30 +54,41 @@ const navItems = [
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
-          <span class="sr-only">Open main menu</span>
-          <svg class="block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <span class="sr-only">Buka menu navigasi</span>
+          <svg
+            class="block h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
           </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile menu -->
-    <div class="mobile-menu hidden md:hidden border-t border-util-border" id="mobile-menu">
+    <div
+      class="mobile-menu hidden md:hidden border-t border-util-border"
+      id="mobile-menu"
+    >
       <div class="py-2 space-y-1">
-        {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class="text-util-text font-mono hover:text-util-heading hover:bg-util-surface block px-4 py-3 text-sm uppercase tracking-widest border-l-2 border-transparent hover:border-util-accent transition-all duration-200"
-            >
-              > {item.name}
-            </a>
-          ))
-        }
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-util-text font-mono hover:text-util-heading hover:bg-util-surface block px-4 py-3 text-sm uppercase tracking-widest border-l-2 border-transparent hover:border-util-accent transition-all duration-200"
+          >
+            > {item.name}
+          </a>
+        ))}
         <div class="px-4 pt-4 pb-2">
           <a href="#dns" class="btn-accent block w-full text-center">
-           Mulai Sekarang
+            Mulai Sekarang
           </a>
         </div>
       </div>

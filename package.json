@@ -34,12 +34,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.8.0",
     "tailwindcss": "^3.4.17"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"

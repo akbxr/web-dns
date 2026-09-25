@@ -1,123 +1,239 @@
 ---
-// Define props with JavaScript comments instead of TypeScript interface
-// @type {Object} Props
-// @property {string} title - The title of the page
-// @property {string} [description] - The description of the page
-// @property {string} [keywords] - The keywords for the page
-// @property {string} [image] - The image for social sharing
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  type?: string;
+  googleSiteVerification?: string;
+}
 
 const {
   title,
   description = "DNS Server untuk memblokir judi online, iklan, tracker, dan telemetri. Privasi terjamin 100% dengan no-logs policy. Melindungi keluarga dengan internet yang lebih aman dan bersih.",
   keywords = "DNS server, no logs, tanpa logs, blok judi online, blok judol, blokir judol, blokir judi online, anti iklan, anti tracker, DNS gratis, internet aman, parental control, DNS Indonesia, privasi, zero logs, private DNS",
   image = "/og-image.png",
+  type = "website",
+  googleSiteVerification = "F85n5u4l3q87Q-o_wH5vMh-gL6Wj3k-nO_pQ7rS8tU", // fallback / placeholder or pass via prop
 } = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.toString() : "https://dns.akbxr.com";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const ogImageURL = new URL(image, siteUrl);
+
+const jsonLdOrganization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://dns.akbxr.com/#organization",
+  name: "AKBXR DNS",
+  url: "https://dns.akbxr.com",
+  logo: "https://dns.akbxr.com/favicon.svg",
+  sameAs: [
+    "https://github.com/akbxr/dns",
+    "https://github.com/akbxr",
+    "https://twitter.com/akbxr",
+    "https://akbxr.com",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Technical Support",
+    availableLanguage: ["Indonesian", "English"],
+  },
+};
+
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://dns.akbxr.com/#website",
+  name: "AKBXR DNS",
+  url: "https://dns.akbxr.com",
+  description: description,
+  inLanguage: "id-ID",
+  publisher: {
+    "@id": "https://dns.akbxr.com/#organization",
+  },
+};
+
+const jsonLdSoftwareApp = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "AKBXR DNS",
+  applicationCategory: "SecurityApplication",
+  operatingSystem: "Android, iOS, Windows, macOS, Linux, Router",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "IDR",
+    availability: "https://schema.org/InStock",
+  },
+  description:
+    "Layanan DNS publik aman gratis untuk memblokir situs judi online, iklan, malware, pelacak, dan pornografi dengan kebijakan zero-logs.",
+  url: "https://dns.akbxr.com",
+  provider: {
+    "@id": "https://dns.akbxr.com/#organization",
+  },
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Apa itu AKBXR DNS dan apa fungsinya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "AKBXR DNS adalah layanan Domain Name System (DNS) publik independen asal Indonesia yang mengamankan koneksi internet Anda dengan memblokir akses ke situs judi online (judol), iklan pop-up/banner, tracker analitik, malware phishing, dan konten berbahaya sebelum sempat dimuat di perangkat Anda.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Apakah AKBXR DNS benar-benar gratis dan no-logs?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ya, AKBXR DNS 100% gratis tanpa biaya langganan. Kami menerapkan kebijakan privasi ketat Zero-Logs: kami tidak pernah merekam, menyimpan, memprofilkan, atau menjual aktivitas penelusuran (browsing history) dan alamat IP pengguna kepada siapa pun.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Bagaimana cara kerja pemblokiran situs judi dan iklan?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "AKBXR DNS menggunakan teknik DNS Sinkholing dengan database lebih dari 7 juta aturan filter yang terus diperbarui. Saat aplikasi atau browser meminta domain situs judi online atau server iklan, server DNS langsung mengembalikan respon NXDOMAIN (0.0.0.0), sehingga konten berbahaya tersebut gagal dimuat seketika.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Apa perbedaan antara DNS over TLS (DoT) dan DNS over HTTPS (DoH)?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "DoT (DNS over TLS) berjalan di port 853 dan mengenkripsi seluruh permintaan DNS sistem (standar Private DNS di Android). Sedangkan DoH (DNS over HTTPS) berjalan di port 443 membungkus kueri DNS di dalam lalu lintas HTTPS biasa (cocok untuk browser modern, iOS, dan Windows 11), sehingga sulit diblokir atau diintip oleh ISP.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Apakah menggunakan AKBXR DNS memperlambat koneksi internet?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tidak. Latensi respon DNS kami dioptimalkan di bawah 20ms untuk kawasan Indonesia. Selain itu, dengan memblokir aset iklan berat, skrip pelacak, dan banner video otomatis, halaman web justru akan terbuka lebih cepat serta menghemat kuota data seluler Anda.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Perangkat apa saja yang bisa menggunakan AKBXR DNS?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Semua perangkat modern didukung: Android (melalui fitur Private DNS atau aplikasi Rethink/Intra), iPhone & iPad (melalui DNS Profile / konfigurasi WiFi), Windows 10/11, macOS, Linux, serta Router jaringan (MikroTik, OpenWrt, AsusWRT, dll).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Bagaimana jika ada situs yang salah terblokir atau situs judi baru yang belum terdeteksi?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Anda dapat berkontribusi melaporkannya di bagian 'Laporkan Situs' di halaman web atau melalui issue GitHub kami. Laporan false-positive dan domain judi baru akan ditinjau dan diperbarui secara berkala.",
+      },
+    },
+  ],
+};
 ---
 
 <!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="AKBXR DNS" />
-    <meta name="language" content="id" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="canonical" href={Astro.url} />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Open Graph -->
+    <!-- Essential SEO -->
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Akbar Khairul Aziz (AKBXR)" />
+    <meta name="publisher" content="AKBXR DNS" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta
+      name="bingbot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="id" href={canonicalURL} />
+    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+
+    {googleSiteVerification && (
+      <meta name="google-site-verification" content={googleSiteVerification} />
+    )}
+
+    <!-- Favicons and Web App Manifest -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#050505" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Open Graph (Facebook / WhatsApp / LinkedIn / Discord) -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:secure_url" content={ogImageURL} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="AKBXR DNS - Internet Bersih Bebas Judi Online & Iklan"
+    />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:site_name" content="AKBXR DNS" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(image, Astro.url)} />
-    <meta name="twitter:site" content="@dnsguard" />
-    <meta name="twitter:creator" content="@dnsguard" />
-
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#3B82F6" />
-    <meta name="format-detection" content="telephone=no" />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta
+      name="twitter:image:alt"
+      content="AKBXR DNS - Internet Bersih Bebas Judi Online & Iklan"
+    />
+    <meta name="twitter:site" content="@akbxr" />
+    <meta name="twitter:creator" content="@akbxr" />
 
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AKBXR DNS",
-        "description": "DNS Server gratis untuk memblokir judi online, iklan, tracker, dan telemetri",
-        "url": "https://dns.akbxr.com",
-        "logo": "https://dns.akbxr.com/favicon.svg",
-        "sameAs": ["https://twitter.com/akbxr", "https://github.com/akbxr/dns"],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Technical Support",
-          "availableLanguage": "Indonesian"
-        },
-        "offers": {
-          "@type": "Offer",
-          "description": "Free DNS service for blocking gambling, ads, trackers, and telemetry with no-logs policy",
-          "price": "0",
-          "priceCurrency": "IDR"
-        },
-        "privacyPolicy": "https://dns.akbxr.com",
-        "additionalProperty": [
-          {
-            "@type": "PropertyValue",
-            "name": "Privacy Policy",
-            "value": "No Logs - Zero Data Collection"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "DNS Security",
-            "value": "Blocks gambling, ads, trackers, telemetry"
-          }
-        ]
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "AKBXR DNS",
-        "url": "https://dns.akbxr.com",
-        "description": "DNS Server gratis tanpa logs untuk memblokir judi online, iklan, tracker, dan telemetri dengan jaminan privasi 100%",
-        "inLanguage": "id-ID",
-        "isAccessibleForFree": true,
-        "creator": {
-          "@type": "Organization",
-          "name": "Akbar Khairul Aziz"
-        },
-        "mainEntity": {
-          "@type": "Service",
-          "name": "AKBXR DNS No-Logs DNS Service",
-          "description": "Private DNS service with zero logging policy",
-          "serviceType": "DNS Resolution Service",
-          "termsOfService": "https://dns.akbxr.com/terms"
-        }
-      }
-    </script>
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLdOrganization)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLdWebSite)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLdSoftwareApp)}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdFaq)} />
   </head>
-  <body class="bg-util-bg text-util-text bg-grid-pattern">
+  <body class="bg-util-bg text-util-text bg-grid-pattern min-h-screen">
     <slot />
 
     <style>

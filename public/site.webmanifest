@@ -1,0 +1,21 @@
+{
+  "name": "AKBXR DNS - Internet Bersih Tanpa Gangguan",
+  "short_name": "AKBXR DNS",
+  "description": "DNS Server untuk memblokir judi online, iklan, tracker, dan konten berbahaya.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
